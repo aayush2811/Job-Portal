@@ -1,0 +1,28 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+  }
+  
+  .circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #a59999;
+    pointer-events: none; /* Ensure circle doesn't interfere with cursor events */
+    animation: shimmer 1.5s infinite linear; /* Shimmer animation */
+  }
+  
+  @keyframes shimmer {
+    0% {
+      background-color: #a59999; /* Starting color */
+    }
+    50% {
+      background-color: #e67770; /* Mid color */
+    }
+    100% {
+      background-color: #a59999; /* Ending color */
+    }
+  }
+  

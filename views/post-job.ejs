@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Post Job</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<!-- Bootstrap 5.3 link -->
+	<link href="/js/bootstrap5.3/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Font-family -->
+	<link href="/font/raleway/style.css" rel="stylesheet">
+	<link href="/font/rubik/style.css" rel="stylesheet">
+	<!-- Font-awesome link -->
+	<link rel="stylesheet" type="text/css" href="/fonts/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="css/cursor.css">
+</head>
+
+<body>
+	<!-- header start here -->
+	<div id="header"></div>
+	<!-- header end here -->
+
+	<!-- cursor effect  -->
+<div class="cursor"></div>
+<div class="circle"></div>
+<!-- cursor effect end  -->
+
+	<section class="nearJob">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-5 nearcol">
+					<h1>Your dream Job</h1>
+					<h2 class="text-red">Is Near to You</h2>
+				</div>
+				<div class="col-sm-7 d-none d-md-block">
+					<div class="row">
+						<div class="d-flex w-100">
+							<img class="w-100" src="images/post-job/banner.png" alt="Banner">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /. nearJob -->
+
+	<section class="stillGot">
+		<div class="container-fluid">
+			<div class="row text-center">
+				<div class="col-sm-12 mx-auto">
+					<h2>Post Your <span class="text-red"> Job</span></h2>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12">
+					<form method="post" enctype="multipart/form-data" action="/job">
+						<div class="row">
+							<div class="col-sm-12 form-group">
+								<input type="text" name="designation" id="designation" class="form-control"
+									placeholder="Job Designation" required>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<input type="text" name="company_name" id="companyName" class="form-control"
+									placeholder="Company Name" required>
+							</div>
+
+							<div class="col-sm-6 form-group">
+								<input type="text" name="company_location" id="companyLocation" class="form-control"
+									placeholder="Company Location" required>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<input type="email" name="company_email" id="companyEmail" class="form-control"
+									placeholder="Company Email ID" required>
+							</div>
+							<div class="col-sm-6 form-group">
+								<input type="tel" name="company_phone" id="companyPhone" class="form-control"
+									placeholder="Company Phone Number" required>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<input type="text" name="company_detail" id="companyEmail" class="form-control"
+									placeholder="Company Detail" required>
+							</div>
+							<div class="col-sm-6 form-group">
+								<input type="text" name="website" id="companyPhone" class="form-control"
+									placeholder="Company Website" required>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-sm-6 form-group">
+								<input type="text" name="salary" id="salary" class="form-control" placeholder="Salary"
+									required>
+							</div>
+							<div class="col-sm-6 form-group">
+								<input type="file" name="company_logo" id="companyLogo" class="form-control"
+									accept="image/*" required>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-sm-12 form-group">
+								<textarea class="form-control" name="description" rows="6" placeholder="Job Description"
+									required></textarea>
+							</div>
+						</div>
+
+
+						<div class="row">
+							<div class="col-sm-12 form-group">
+								<textarea class="form-control" name="qualification_requirements" rows="6"
+									placeholder="Qualification " required></textarea>
+							</div>
+							<div class="row">
+								<div class="col-sm-12 form-group">
+									<textarea class="form-control" name="requirements" rows="6"
+										placeholder=" Requirements" required></textarea>
+								</div>
+							</div>
+							<div class="row pt-4">
+								<div class="col-sm-12 form-group">
+									<div class="d-grid">
+										<button type="submit" name="submit" class="btn btn-danger btn-block"
+											id="post">Post Your Job</button>
+									</div>
+								</div>
+							</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /. stillGot -->
+
+	<!-- footer area start -->
+	<div id="footer"></div>
+	<!-- footer area end -->
+
+	<!-- Js Links -->
+	<script src="/js/bootstrap5.3/js/popper.min.js"></script>
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="/js/bootstrap5.3/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/common.js"></script>
+	<script src="js/cursor.js"></script>
+</body>
+
+</html>

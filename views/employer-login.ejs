@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Employer Login</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<!-- Bootstrap 5.3 link -->
+	<link href="/js/bootstrap5.3/css/bootstrap.min.css" rel="stylesheet">	
+	<!-- Font-family -->	
+	<link href="/font/raleway/style.css" rel="stylesheet">	
+	<link href="/font/rubik/style.css" rel="stylesheet">
+	<!-- Font-awesome link -->
+	<link rel="stylesheet" type="text/css" href="/fonts/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="css/cursor.css">
+</head>
+<body>
+<!-- header start here -->
+<div id="header"></div>
+<!-- header end here -->
+
+<!-- cursor effect  -->
+<div class="cursor"></div>
+<div class="circle"></div>
+<!-- cursor effect end  -->
+	
+<section class="loginForm employer-login">
+    <div class="container-fluid">
+		<div class="login-inner">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="login-sec">
+						<div class="text-center">
+							<h3 class="text-center">WELCOME BACK</h3>
+							<h4 class="text-red">Please Login to Your Company Account</h4>
+						</div>
+						<form method="post">
+							<div class="latestForm">
+								<!-- user input -->
+								<div class="form-group"> 
+									<input type="text" name="username" id="userName" class="form-control" placeholder="Username" value="" required> 
+									<i class="fa fa-user iconSet" aria-hidden="true"></i>
+								</div>
+								<!-- password input -->
+								<div class="form-group mb-0"> 
+									<input type="password" name="password" id="password" class="form-control" placeholder="Password" value="" required> 
+									<i class="fa fa-lock iconSet" aria-hidden="true"></i>
+								</div> 
+							</div> 
+							<!-- /. latestForm -->
+							<!-- 2 column grid layout for inline styling -->
+							<div class="row justlogin">
+								<div class="col d-flex justify-content-left">
+									<!-- Checkbox -->
+									<div class="form-check">
+									<div class="checkbox m-0">
+										<input type="checkbox" name="savepassword" class="form-check-input" id="savePwd" checked required>
+										<label class="form-check-label p-1" for="savePwd">Save Password</label>
+									</div>
+									</div>
+								</div>
+
+								<div class="col text-end">
+								  <!-- Simple link -->
+								  <a class="forgotPwd" href="forgot-password">Forgot password?</a>
+								</div>
+							</div>
+
+							<!-- Submit button -->
+							<div class="d-grid">
+							<input type="submit" name="submit" class="btn btn-danger" id="login" value="Login">
+							</div>
+							<!-- Register buttons -->
+							<div class="text-center">
+								<p>Don't have Account? <a class="clickHere" href="register">RegisterYour Company Here</a></p>
+							</div>
+						</form>	
+					</div>
+				</div>
+				<div class="col-md-5 banner-sec">
+					<img class="d-block img-fluid w-100 h-100" src="images/team-meeting.png" alt="Banner">
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- footer area start -->
+<div id="footer"></div>
+<!-- footer area end -->
+
+<!-- Js Links -->
+<script src="/js/bootstrap5.3/js/popper.min.js"></script>
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap5.3/js/bootstrap.bundle.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="js/cursor.js"></script>
+</body>
+</html>

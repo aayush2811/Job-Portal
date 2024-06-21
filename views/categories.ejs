@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Categroies</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<!-- Bootstrap 5.3 link -->
+	<link href="/js/bootstrap5.3/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Font-family -->
+	<link href="/font/raleway/style.css" rel="stylesheet">
+	<link href="/font/rubik/style.css" rel="stylesheet">
+	<!-- Font-awesome link -->
+	<link rel="stylesheet" type="text/css" href="/fonts/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="css/cursor.css">
+</head>
+
+<body>
+	<!-- header start here -->
+	<div id="header"></div>
+	<!-- header end here -->
+
+	<!-- cursor effect  -->
+	<div class="cursor"></div>
+	<div class="circle"></div>
+	<!-- cursor effect end  -->
+
+	<section class="nearJob">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-5 nearcol">
+					<h1>Your dream Job</h1>
+					<h2 class="text-red">Is Near to You</h2>
+				</div>
+				<div class="col-sm-7 d-none d-md-block">
+					<div class="row">
+						<div class="d-flex w-100">
+							<img class="w-100" src="images/categories/banner.png" alt="Banner">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /. nearJob -->
+	<nav class="topbreadcrumb">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+						<li class="breadcrumb-item"><a href="categories">Categories</a></li>
+					</ul>
+				</div>
+			</div>
+		</div><br>
+		<div class="container">
+			<a href="/dashbord"><button class="btn btn-danger">Dashbord</button></a>
+		</div>
+	</nav>
+	<!-- /. topbreadcrumb -->
+
+	<section class="explore">
+		<div class="container-fluid">
+			<h3 class="text-center">Explore <span class="text-red"> By Categories</span></h3>
+			<div class="row m-5">
+				<div class="col-sm-8 offset-sm-2"> <!-- Adjust column width and offset as needed -->
+					<form class="d-flex" method="get">
+						<!-- Added class "d-flex" to make form elements align horizontally -->
+						<input class="form-control me-2 border border-danger" type="search" name="search"
+							placeholder="Search"> <!-- Added Bootstrap class "form-control" for styling -->
+						<button class="btn btn-danger" type="submit">Search</button>
+						<!-- Added Bootstrap classes for styling -->
+					</form>
+				</div>
+			</div>
+
+
+			<!-- jobforYou Start -->
+			<section class="jobforYou">
+				<div class="container-fluid">
+					<!-- carousel wrapper -->
+					<div id="jobSlider" class="carousel slide">
+
+						<div class="row">
+							<% job.forEach((item)=> { %>
+								<div class="col-sm-3">
+									<div class="jobBox">
+										<img class="w-100" src="images/home/job-for-you.png" alt="Job">
+										<div class="jobBox-content">
+											<h3>
+												<%= item.designation %>
+											</h3>
+											<button type="button" class="btn btn-outline-warning">Apply Now</button>
+										</div>
+										<div class="jobBox-hover">
+											<div class="card">
+												<img class="card-img-top" src="images/home/job-hover.png" alt="Job">
+												<div class="jobBox-hover-content">
+													<i class="fa fa-cube" aria-hidden="true"></i>
+													<h3>
+														<%= item.designation %>
+													</h3>
+												</div>
+												<div class="card-body">
+													<h4>
+														<%= item.company_name %>
+													</h4>
+													<ul class="list-unstyled mb-0">
+														<li>
+															<%= item.company_location %>
+														</li>
+														<li>
+															<%= item.company_phone %>
+														</li>
+													</ul>
+												</div>
+												<a href="job-details/<%= item._id %>">Apply Now</a>
+											</div>
+										</div>
+									</div>
+								</div>
+								<% }) %>
+									<!-- pagination -->
+									<div class="col-sm-12 text-center">
+										<%for(let i=1; i<=total; i++){%>
+											<a href="?page=<%= i %>"><button class="btn btn-danger">
+													<%= i%>
+												</button></a>
+											<%}%>
+									</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<!-- jobforYou End -->
+
+
+		</div>
+	</section>
+
+
+
+
+
+
+
+	<!-- Js Links -->
+	<script src="/js/bootstrap5.3/js/popper.min.js"></script>
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="/js/bootstrap5.3/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/common.js"></script>
+	<script src="js/cursor.js"></script>
+</body>
+
+</html>

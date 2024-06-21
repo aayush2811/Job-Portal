@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Job Details</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="/css/stylesheet.css">
+	<!-- Bootstrap 5.3 link -->
+	<link href="/js/bootstrap5.3/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Font-family -->
+	<link href="/font/raleway/style.css" rel="stylesheet">
+	<link href="/font/rubik/style.css" rel="stylesheet">
+	<!-- Font-awesome link -->
+	<link rel="stylesheet" type="text/css" href="/fonts/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="css/cursor.css">
+</head>
+
+<body>
+	<!-- header start here -->
+	<div id="header"></div>
+	<!-- header end here -->
+
+	<!-- cursor effect  -->
+<div class="cursor"></div>
+<div class="circle"></div>
+<!-- cursor effect end  -->
+
+	<section class="nearJob">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-5 nearcol">
+					<h1>Your dream Job</h1>
+					<h2 class="text-red">Is Near to You</h2>
+				</div>
+				<div class="col-sm-7 d-none d-md-block">
+					<div class="row">
+						<div class="d-flex w-100">
+							<img class="w-100" src="/images/company-details/banner.png" alt="Banner">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /. nearJob -->
+
+	<nav class="topbreadcrumb">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<ul class="breadcrumb">
+						<li class="breadcrumb-item"><a href="/">Home</a></li>
+						<li class="breadcrumb-item"><a href="job-details">Job Details</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!-- /. topbreadcrumb -->
+	<section class="candidate">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-8 leftcandi">
+					<div class="row">
+
+						<div class="col-sm-12">
+							<h3>
+								<%=job.designation%>
+							</h3>
+							<div class="offset-1">
+								<div class="media py-2">
+									<div class="company-logo">
+										<img class="float-start me-4 mb-3" src="/uploads/<%=job.company_logo%>"
+											alt="Profile" style="border-radius: 60px; height:50px">
+
+									</div>
+									<div class="media-body">
+										<h4 class="text-red pb-0">
+											<%=job.company_name%>
+										</h4>
+										<ul class="list-unstyled muted">
+
+											<li><i class="fa fa-map-marker" aria-hidden="true"></i>
+												<%=job.company_location%>
+											</li>
+										</ul>
+									</div>
+								</div>
+								<p>
+									<%=job.company_detail%>
+								</p>
+
+							</div>
+						</div>
+
+					</div><!-- /. row -->
+
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>Job Description:-</h4>
+							<div class="offset-1">
+								<p>
+									<%=job.description%>
+								</p>
+							</div>
+						</div>
+					</div><!-- /. row -->
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>Qualification:-</h4>
+							<div class="offset-1">
+								<p>
+									<%=job.qualification_requirements%>
+								</p>
+							</div>
+						</div>
+					</div><!-- /. row -->
+					<div class="row">
+						<div class="col-sm-12">
+							<h4>Requirment:-</h4>
+							<div class="offset-1">
+								<p>
+									<%=job.requirements%>
+								</p>
+							</div>
+						</div>
+					</div><!-- /. row -->
+				</div><!-- grid column 8 -->
+				<div class="col-sm-3 rightcandi offset-md-1">
+					<div class="row">
+						<div class="col-sm-12">
+							<h6><i class="fa fa-map-marker me-2" aria-hidden="true"></i> Job Location</h6>
+							<div class="border-bottom w-75"></div>
+							<p><i class="fa fa-building me-2" aria-hidden="true"></i>
+								<%=job.company_name%>
+							</p>
+							<p><i class="fa fa-envelope me-2" aria-hidden="true"></i>
+								<%=job.company_email%>
+							</p>
+							<p><i class="fa fa-globe me-3" aria-hidden="true">
+									<%=job.website%>
+								</i></p>
+							<p><i class="fa fa-phone me-3" aria-hidden="true"></i><span class="f_rubik">
+									<%=job.company_phone%>
+								</span></p>
+							<p>
+								<i class="fa-solid fa-money-bill me-3"></i>₹<span class="f_rubik">
+									<%=job.salary%>
+								</span> Month
+							</p>
+						</div>
+						<div class="d-grid">
+							<a href="/profile" class="btn btn-danger btn-block my-5">
+								Apply For Job
+							</a>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- /. candidate -->
+
+	<!-- footer area start -->
+	<div id="footer"></div>
+	<!-- footer area end -->
+
+	<!-- Js Links -->
+	<script src="/js/bootstrap5.3/js/popper.min.js"></script>
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="/js/bootstrap5.3/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/common.js"></script>
+	<script src="js/cursor.js"></script>
+</body>
+
+</html>

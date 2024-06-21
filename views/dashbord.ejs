@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+    <link rel="stylesheet" href="css/dashbord.css">
+    <!-- font-family link  -->
+    <link href="/font/raleway/style.css" rel="stylesheet">	
+	<link href="/font/rubik/style.css" rel="stylesheet">
+	<!-- Font-awesome link -->
+	<link rel="stylesheet" type="text/css" href="/fonts/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="css/cursor.css">
+</head>
+<body>
+
+<!-- cursor effect  -->
+<div class="cursor"></div>
+<div class="circle"></div>
+<!-- cursor effect end  -->
+
+    <div class="container-fluid">
+        <table class="table table-bordered">
+            <thead class="thead-light">
+                <tr>
+                    <th class="text-center" colspan="10">Personal Information</th>
+                    <th class="text-center" colspan="2">Skills</th>
+                    <th class="text-center" colspan="4">Education</th>
+                    <th class="text-center" colspan="6">Experience</th>
+                    <th class="text-center" colspan="5">Portfolio</th>
+                    <th class="text-center">CV</th>
+                    <th class="text-center" colspan="2">Action</th>
+                </tr>
+                <tr>
+                    <th>firstName</th>
+                    <th>lastName</th>
+                    <th>dob</th>
+                    <th>number</th>
+                    <th>address</th>
+                    <th>personalDesignation</th>
+                    <th>age</th>
+                    <th>gender</th>
+                    <th>aboutMe</th>
+                    <th>Email</th>
+
+                    <th>skillName</th>
+                    <th>skillPercentage</th>
+
+                    <th>title</th>
+                    <th>degree</th>
+                    <th>institute</th>
+                    <th>year</th>
+
+                    <th>company</th>
+                    <th>designation</th>
+                    <th>jobForm</th>
+                    <th>endOn</th>
+                    <th>location</th>
+                    <th>aboutCompany</th>
+
+                    <th>projectName</th>
+                    <th>portfolio_start_from</th>
+                    <th>portfolio_end_on</th>
+                    <th>projectDescription</th>
+                    <th>projectImage</th>
+
+                    <th>Download C.V</th>
+
+                    <th>Accept</th>
+                    <th>Reject</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                <% user.forEach((data) => { %>
+                <tr>
+                    <td><%= data.personalInformation.firstName %></td>
+                    <td><%= data.personalInformation.lastName %></td>
+                    <td><%= data.personalInformation.dob %></td>
+                    <td><%= data.personalInformation.number %></td>
+                    <td><%= data.personalInformation.address %></td>
+                    <td><%= data.personalInformation.personalDesignation %></td>
+                    <td><%= data.personalInformation.age %></td>
+                    <td><%= data.personalInformation.gender %></td>
+                    <td><%= data.personalInformation.aboutMe %></td>
+                    <td><%= data.personalInformation.email %></td>
+
+                    <% data.skills.forEach((skill) => { %>
+                    <td><%= skill.skillName %></td>
+                    <td><%= skill.skillPercentage %></td>
+                    <% }) %>
+
+                    <% data.education.forEach((edu) => { %>
+                    <td><%= edu.title %></td>
+                    <td><%= edu.degree %></td>
+                    <td><%= edu.institute %></td>
+                    <td><%= edu.year %></td>
+                    <% }) %>
+
+                    <% data.experience.forEach((exp) => { %>
+                    <td><%= exp.company %></td>
+                    <td><%= exp.designation %></td>
+                    <td><%= exp.jobForm %></td>
+                    <td><%= exp.endOn %></td>
+                    <td><%= exp.location %></td>
+                    <td><%= exp.aboutCompany %></td>
+                    <% }) %>
+
+                    <% data.portfolio.forEach((project) => { %>
+                    <td><%= project.projectName %></td>
+                    <td><%= project.portfolio_start_from %></td>
+                    <td><%= project.portfolio_end_on %></td>
+                    <td><%= project.projectDescription %></td>
+                    <td><img src="/uploads/<%= project.projectImage %>" alt="Project Image" width="100"></td>
+                    <% }) %>
+
+                    <td><a href=" /uploads/<%= data.cv %>" download="<%= data.cv %>"><%= data.cv %></a></td>
+                    <td> 
+                        <a href="/approved/<%= data.personalInformation.email %>" class="btn btn-success">Accept</a> 
+                    </td>
+                    <td> 
+                        <form action="/delete-user-post" method="post">
+                            <input type="hidden" name="postID" value="<%= data._id %>">
+                            <button class="btn btn-danger delete-btn">Reject</button>
+                        </form>
+                    </td>
+                </tr>
+                <% }) %>
+            </tbody>
+        </table>
+        <a href="/categories"><button class="btn btn-danger">Back</button></a>
+    </div>
+    <!-- Bootstrap JS and dependencies (optional) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/dashbord.js"></script>
+    <script src="js/cursor.js"></script>
+</body>
+</html>

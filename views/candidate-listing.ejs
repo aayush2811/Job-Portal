@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Candidate Listing</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<!-- Bootstrap 5.3 link -->
+	<link href="/js/bootstrap5.3/css/bootstrap.min.css" rel="stylesheet">	
+	<!-- Font-family -->	
+	<link href="/font/raleway/style.css" rel="stylesheet">	
+	<link href="/font/rubik/style.css" rel="stylesheet">
+	<!-- Font-awesome link -->
+	<link rel="stylesheet" type="text/css" href="/fonts/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="css/cursor.css">
+</head>
+<body>
+<!-- header start here -->	
+<div id="header"></div>
+<!-- header end here -->
+
+<!-- cursor effect  -->
+<div class="cursor"></div>
+<div class="circle"></div>
+<!-- cursor effect end  -->
+
+<section class="nearJob">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-5 nearcol">
+				<h1>Your dream Job</h1>
+				<h2 class="text-red">Is Near to You</h2>
+			</div>
+			<div class="col-sm-7 d-none d-md-block">
+				<div class="row">
+					<div class="d-flex w-100">
+						<img class="w-100" src="images/post-job/banner.png" alt="Banner">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /. nearJob -->
+
+<section class="candidateList">
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-12">
+				<h3>Candidate <span class="text-red">Listing</span></h3>
+				<div class="row">
+					<div class="col-sm-3 pe-0 dropdown-container position-relative">
+						<select name="education" id="education" class="form-control">
+							<option value="education">Education</option>
+						</select>
+					</div>
+					<div class="col-sm-3 pe-0 dropdown-container position-relative">
+						<select name="year" id="year" class="form-control">
+							<option value="year">Year</option>
+							<option value="1year">1 Year</option>
+							<option value="2year">2 Year</option>
+							<option value="4year">4 Year</option>
+							<option value="7year">7 Year</option>
+							<option value="10year">10 Year</option>
+						</select>
+					</div>
+					<div class="col-sm-3 pe-0 dropdown-container position-relative">
+						<select name="location" id="location" class="form-control">
+							<option value="location">Loaction</option>
+							<option value="newyork">New York</option>
+							<option value="losangeles">Los Angeles</option>
+							<option value="shicago">India</option>
+							<option value="uniteskingdom">United Kingdom</option>
+						</select>
+					</div>
+					<div class="col-sm-3">
+						<input type="submit" name="inputsearch" id="input-search" class="btn btn-danger btn-block form-control" value="Search">
+					</div>
+				</div><!-- /. row -->
+				<div class="listCandidates">
+					<div class="row">
+						<div class="col-sm-8">
+							<div class="media">
+								<div class="jobImage w-auto float-md-start">
+									<div class="image-card me-4">
+										<img src="images/candidate-listing/candidate1.png" alt="Candidate-1">
+									</div>
+								</div>
+								<div class="media-body">
+									<h5>Anna Deo</h5>
+									<ul class="list-inline">
+										<li class="list-inline-item">
+											<i class="fa fa-phone mr-2" aria-hidden="true"></i>
+											<span class="f_rubik">9865235893</span>
+										</li>
+										<li class="list-inline-item">
+											<i class="fa fa-map-marker mr-2" aria-hidden="true"></i>
+											San Francisco
+										</li>
+										<li class="list-inline-item">
+											<i class="fa fa-file-text-o mr-2" aria-hidden="true"></i>
+											Full Time
+										</li>
+									</ul>
+									<ul class="list-inline editText mb-0">
+										<li class="list-inline-item">Java Script</li>
+										<li class="list-inline-item">PHP</li>
+										<li class="list-inline-item">CSS</li>
+										<li class="list-inline-item">C++</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4 text-end listRight">
+							<h5 class="f_rubik">$5000-1000 <br><span>(Monthly)</span></h5>
+							<a href="candidate-details" class="btn btn-outline-dark rounded-pill">
+								View Details
+							</a>
+						</div>
+					</div><!-- /. row -->
+				</div><!-- /. listCandidates -->
+				
+				
+				
+				
+				
+				
+			</div>
+		</div>
+	</div>
+</section>
+<!-- /. candidateList -->
+
+<!-- footer area start -->
+<div id="footer"></div>
+<!-- footer area end -->
+
+<!-- Js Links -->
+<script src="/js/bootstrap5.3/js/popper.min.js"></script>
+<script src="/js/jquery-3.6.0.min.js"></script>
+<script src="/js/bootstrap5.3/js/bootstrap.bundle.min.js"></script>
+<script src="/js/common.js"></script>
+<script src="js/cursor.js"></script>
+</body>
+</html>

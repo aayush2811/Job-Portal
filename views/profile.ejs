@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Profile</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Stylesheet -->
+	<link rel="stylesheet" type="text/css" href="css/stylesheet.css">
+	<!-- Bootstrap 5.3 link -->
+	<link href="/js/bootstrap5.3/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Font-family -->
+	<link href="/font/raleway/style.css" rel="stylesheet">
+	<link href="/font/rubik/style.css" rel="stylesheet">
+	<!-- Font-awesome link -->
+	<link rel="stylesheet" type="text/css" href="/fonts/fontawesome/css/all.min.css">
+	<link rel="stylesheet" href="css/cursor.css">
+</head>
+
+<body>
+	<!-- header start here -->
+	<div id="header"></div>
+	<!-- header end here -->
+
+	<!-- cursor effect  -->
+<div class="cursor"></div>
+<div class="circle"></div>
+<!-- cursor effect end  -->
+
+	<section class="profile_banner">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-6 nearJob">
+					<h1>Your dream Job</h1>
+					<h2 class="text-red">Is Near to You</h2>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /. profile_banner -->
+
+	<section class="profileMain">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-3 pe-lg-5">
+					<div class="card mb-2 border-0">
+						<div class="jobImage">
+							<div class="image-card">
+								<img class="card-img-top" src="images/profile/profile.png" alt="Profile">
+							</div>
+						</div>
+						<div class="card-body rgba-blue">
+							<p class="mb-0 text-white">Change Photo</p>
+						</div>
+					</div>
+
+					<div class="proLinks">
+						<div class="d-grid mb-4">
+							<a href="/" class="btn btn-outline-danger">
+								<i class="fa fa-cloud me-2" aria-hidden="true"></i> Dashboard
+							</a>
+						</div>
+						<div class="d-grid mb-4">
+							<a href="profile" class="btn btn-outline-danger">
+								<i class="fa fa-user me-2" aria-hidden="true"></i> Profile
+							</a>
+						</div>
+						<div class="d-grid mb-4">
+							<a href="register" class="btn btn-outline-danger">
+								<i class="fa fa-key me-2" aria-hidden="true"></i> Change Password
+							</a>
+						</div>
+						<div class="d-grid mb-4">
+							<a href="forgot-password" class="btn btn-outline-danger">
+								<i class="fa fa-sign-out me-2" aria-hidden="true"></i> Logout
+							</a>
+						</div>
+					</div>
+				</div><!-- /. grid column -->
+				<div class="col-sm-9 profile_right">
+					<div class="border p-4">
+						<form method="post" action="/applyuser" enctype="multipart/form-data">
+							<div class="pb-5">
+								<h3>Personal Information
+									<span class="float-end fx-top">
+										<label for="cvUpload" class="btn btn-danger">
+											<i class="fa fa-upload me-2" aria-hidden="true"></i> Upload Your CV
+										</label>
+										<input type="file" name="cv" accept=".pdf" id="cvUpload" style="display: none;" required>
+									</span>
+								</h3>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-6">
+									<input type="text" name="firstname" id="firstName" class="form-control"
+										placeholder="First Name" value="" required>
+								</div>
+								<div class="col-sm-6">
+									<input type="text" name="lastname" id="lastName" class="form-control"
+										placeholder="Last Name" value="" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-6">
+									<input type="date" name="dob" id="dob" class="form-control" value="" required>
+								</div>
+								<div class="col-sm-6">
+									<input type="number" name="number" id="number" class="form-control"
+										placeholder="+61589632563" value="" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-6">
+									<input type="text" name="address" id="address" class="form-control"
+										placeholder="Address" value="" required>
+								</div>
+								<div class="col-sm-6">
+									<input type="text" name="personal_designation" id="personalDesignation" class="form-control"
+										placeholder="Designation" value="" required>
+								</div>
+							</div>
+							<div class="form-group row">
+								<div class="col-sm-3 dropdown-container position-relative">
+									<input type="text" name="age" id="address" class="form-control"
+										placeholder="Age" value="" required>
+								</div>
+								<div class="col-sm-3 dropdown-container position-relative">
+									<select name="gender" id="gender" class="form-control">
+										<option value="gender">Gender</option>
+										<option value="male">Male</option>
+										<option value="female">Female</option>
+										<option value="other">Other</option>
+									</select>
+								</div>
+								<!-- add email fiels here  -->
+								<div class="col-sm-6">
+									<input type="email" name="email" id="firstName" class="form-control"
+										placeholder="Your Email" value="" required>
+								</div>
+
+							</div>
+							<div class="form-group">
+								<textarea class="form-control" rows="10" name="about_me" placeholder="About Me" required></textarea>
+							</div>
+						
+							<!-- /. Personal Information -->
+							<h3 class="pt-5">Skills</h3>
+						
+							<div class="py-5">
+								<div class="form-group row">
+									<div class="col-sm-6">
+										<input type="text" name="skill_name" id="skillName" class="form-control"
+											placeholder="Skill Name" value="" required>
+										<h6 class="text-red pt-2">Add Skill</h6>
+									</div>
+									<div class="col-sm-6">
+										<input type="text" name="skill_percentage" id="skillPercentage" class="form-control"
+											placeholder="Skill Percentage" value="" required>
+									</div>
+								</div>
+							</div>
+							<!-- /. Skills -->
+						
+							<h3>Education</h3>
+						
+							<div class="py-5">
+								<div class="form-group row">
+									<div class="col-sm-6">
+										<input type="text" name="education_title" id="educationTitle" class="form-control"
+											placeholder="Title" value="" required>
+									</div>
+									<div class="col-sm-6">
+										<input type="text" name="education_degree" id="educationDegree" class="form-control"
+											placeholder="Degree" value="" required>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-sm-6">
+										<input type="text" name="education_institute" id="educationInstitute" class="form-control"
+											placeholder="Institute" value="" required>
+										<h6 class="text-red pt-2">Add Education</h6>
+									</div>
+									<div class="col-sm-6">
+										<input type="date" name="education_year" id="educationYear" class="form-control" value="" required>
+									</div>
+								</div>
+							</div>
+							<!-- /. Education -->
+						
+							<h3>Experience</h3>
+						
+							<div class="py-5">
+								<div class="form-group row">
+									<div class="col-sm-6">
+										<input type="text" name="experience_company" id="experienceCompany" class="form-control"
+											placeholder="Company" value="" required>
+									</div>
+									<div class="col-sm-6">
+										<input type="text" name="experience_designation" id="experienceDesignation" class="form-control"
+											placeholder="Designation" value="" required>
+									</div>
+								</div>
+								<div class="form-group row">
+									<div class="col-sm-3 dropdown-container position-relative">
+										<select name="job_form" id="jobForm" class="form-control">
+											<option value="job_form">Job Form</option>
+											<option value="full-time">Full Time</option>
+											<option value="part-time">Part Time</option>
+											<option value="contract">Contract</option>
+											<option value="freelance">Freelance</option>
+										</select>
+									</div>
+									<div class="col-sm-3 dropdown-container position-relative">
+										<select name="experience_end_on" id="experienceEndOn" class="form-control">
+											<option value="end_on">End On</option>
+											<option value="1 month">1 Month</option>
+											<option value="2 months">2 Months</option>
+											<option value="3 months">3 Months</option>
+											<option value="1 year">1 Year</option>
+											<option value="2 years">2 Years</option>
+											<option value="3 years">3 Years</option>
+										</select>
+									</div>
+									<div class="col-sm-6 dropdown-container position-relative">
+										<select name="experience_location" id="experienceLocation" class="form-control">
+											<option value="location">Location</option>
+											<option value="new_york">New York</option>
+											<option value="los_angeles">Los Angeles</option>
+											<option value="chicago">Chicago</option>
+											<option value="india">India</option>
+											<option value="united_kingdom">United Kingdom</option>
+										</select>
+									</div>
+								</div>
+								<div class="form-group">
+									<textarea class="form-control" rows="10" name="experience_about_company" placeholder="About Company"
+										required></textarea>
+									<h6 class="text-red pt-2">Add Experience</h6>
+								</div>
+							</div>
+							<!-- /. Experience -->
+						
+							<h3>Portfolio</h3>
+						
+							<div class="pt-5 pb-3">
+								<div class="form-group row">
+									<div class="col-sm-6">
+										<div class="form-group">
+											<input type="text" name="portfolio_project_name" id="portfolioProjectName" class="form-control"
+												placeholder="Project Name" value="" required>
+										</div>
+										<div class="form-group row">
+											<div class="col-sm-6  position-relative">
+												<input type="date" name="portfolio_start_from" id="portfolioStartFrom" class="form-control">
+											</div>
+											<div class="col-sm-6  position-relative">
+												<input type="date" name="portfolio_end_on" id="portfolioStartFrom" class="form-control">
+											</div>
+										</div>
+									</div>
+									<div class="col-sm-6">
+										<textarea class="form-control" name="portfolio_project_description" rows="4"
+											placeholder="Project Description" required></textarea>
+									</div>
+								</div>
+								<div class="form-group pb-5">
+									<div class="file">
+										<label class="upload form-control">
+											<input name="portfolio_image" id="portfolioUploadFile" type="file">
+										</label>
+										<h6 class="text-red pt-2">Add Other</h6>
+									</div>
+								</div>
+								<div class="d-grid">
+									<input type="submit" name="submit" class="btn btn-danger rounded-0" id="update" value="Update & Save">
+								</div>
+							</div>
+						</form>
+						
+						<!-- /. Protfolio -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- /. profileMain -->
+
+	<!-- footer area start -->
+	<div id="footer"></div>
+	<!-- footer area end -->
+
+	<!-- Js Links -->
+	<script src="/js/bootstrap5.3/js/popper.min.js"></script>
+	<script src="/js/jquery-3.6.0.min.js"></script>
+	<script src="/js/bootstrap5.3/js/bootstrap.bundle.min.js"></script>
+	<script src="/js/common.js"></script>
+	<script src="js/cursor.js"></script>
+</body>
+
+</html>

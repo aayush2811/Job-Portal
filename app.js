@@ -2,8 +2,9 @@ const express = require('express');
 require('./db/connection');
 const session = require('express-session');
 const dotenv = require('dotenv');
+const MongoStore = require('connect-mongo');
 
-// Load environment variables from .env file
+
 dotenv.config();
 
 const loginRegisterRouter = require('./routers/loginRegisterRouter');
@@ -19,7 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
-    saveUninitialized: false
+    saveUninitialized: false,
+    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
+
 }));
 app.use('/uploads', express.static("uploads"));
 

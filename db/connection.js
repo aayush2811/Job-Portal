@@ -3,13 +3,7 @@ const mongoose = require('mongoose');
 
 const dbConnection = async () => {
     try {
-        await mongoose.connect(process.env.DB_CONNECTION_STRING, {
-            useNewUrlParser: true,
-            useUnifiedTopology: true,
-            ssl: true, // Ensure SSL is enabled
-            tlsAllowInvalidCertificates: false, // Ensure no invalid certificates are allowed
-            serverSelectionTimeoutMS: 5000, // Increase server selection timeout
-        });
+        await mongoose.connect(process.env.DB_CONNECTION_STRING);
         console.log('MongoDB connected successfully');
     } catch (error) {
         console.error('MongoDB connection failed:', error);
@@ -18,4 +12,3 @@ const dbConnection = async () => {
 };
 
 dbConnection();
-

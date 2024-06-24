@@ -3,6 +3,10 @@ const Job = require('../models/jobModel');
 const UserInfo = require('../models/applyUserModel');
 const path = require('path');
 const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
+
+// Load environment variables from .env file
+dotenv.config();
 
 const storage = multer.diskStorage({
     destination: function (req, file, cb) {
@@ -13,7 +17,6 @@ const storage = multer.diskStorage({
     }
 });
 const upload = multer({ storage: storage });
-
 
 exports.addJob = (req, res) => {
     try {
@@ -49,7 +52,6 @@ exports.addJob = (req, res) => {
     }
 }
 
-
 exports.getJobDetails = async (req, res) => {
     try {
         const jobId = req.params.id;
@@ -63,7 +65,6 @@ exports.getJobDetails = async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 }
-
 
 exports.applyuser = async (req, res) => {
     try {
@@ -171,8 +172,7 @@ exports.deleteuserpost = async (req, res) => {
     }
 }
 
-
-//approver user post in send email by nodemailer
+// Approve user post and send email using Nodemailer
 exports.approved = async (req, res) => {
     try {
         const email = req.params.email;
@@ -183,17 +183,17 @@ exports.approved = async (req, res) => {
             port: 587, // Your SMTP port
             secure: false, // Set to true if using SSL
             auth: {
-                user: 'tusharkothiya710@gmail.com', // Your email address
-                pass: 'njfe wbwl vbnd kwkc' // Your email password or app password
+                user: process.env.EMAIL_APPROVER_USER, // Your email address
+                pass: process.env.EMAIL_APPROVER_PASS // Your email password or app password
             }
         });
 
         // Mail options
         let mailOptions = {
-            from: 'tusharkothiya710@gmail.com', // Sender address
+            from: process.env.EMAIL_APPROVER_USER, // Sender address
             to: email, // List of recipients
             subject: 'Application Review', // Subject line
-            text: 'hey! ' + email + ' your application has been approved.' // Plain text body
+            text: 'Hey! ' + email + ' your application has been approved.' // Plain text body
         };
 
         // Send email
@@ -206,7 +206,6 @@ exports.approved = async (req, res) => {
                 res.send('Application Approved'); // Send response
             }
         });
-
 
     } catch (error) {
         console.log(error);

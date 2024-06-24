@@ -1,14 +1,16 @@
-// generate random number 
-function generateRandomNumber() {
-    return Math.floor(100000 + Math.random() * 900000);
-}
-
-
-
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 const userModel = require("../models/userModel");
 const nodemailer = require('nodemailer');
+const dotenv = require('dotenv');
+
+// Load environment variables from .env file
+dotenv.config();
+
+// Generate random number 
+function generateRandomNumber() {
+    return Math.floor(100000 + Math.random() * 900000);
+}
 
 exports.register = (req, res) => {
     res.render("register");
@@ -27,7 +29,7 @@ exports.registerPost = async (req, res) => {
             role = "Job Seeker";
         }
 
-        const token = jwt.sign({ email }, "tusharKothiya", { expiresIn: "1h" });
+        const token = jwt.sign({ email }, process.env.JWT_SECRET, { expiresIn: "1h" });
         const hashPassword = await bcrypt.hash(password, 10);
         const data = await new userModel({
             firstname,
@@ -60,9 +62,9 @@ exports.loginPost = async (req, res) => {
         }
 
         req.session.user = user;
-        if(user.role === 'Recruiter'){
+        if (user.role === 'Recruiter') {
             res.redirect('/payment');
-        }else{
+        } else {
             res.redirect('/');
         }
     } catch (error) {
@@ -81,17 +83,17 @@ exports.sendEmail = async (req, res) => {
             port: 587, // Your SMTP port
             secure: false, // Set to true if using SSL
             auth: {
-                user: "tusharkothiya710@gmail.com", // Your email address
-                pass: "njfe wbwl vbnd kwkc", // Your email password or app password
+                user: process.env.EMAIL_USER, // Your email address
+                pass: process.env.EMAIL_PASS, // Your email password or app password
             },
         });
 
         // Mail options
         let mailOptions = {
-            from: 'tusharkothiya710@gmail.com', // Sender address
+            from: process.env.EMAIL_USER, // Sender address
             to: email, // List of recipients
             subject: 'Password Recover', // Subject line
-            text: 'Your OTP:- ' + otp + ' to reset your password'// Plain text body
+            text: 'Your OTP: ' + otp + ' to reset your password'// Plain text body
         };
 
         // Send email
@@ -100,30 +102,29 @@ exports.sendEmail = async (req, res) => {
                 console.log(error);
                 res.send('Error occurred, email not sent.'); // Handle error
             } else {
-                res.render('forget-password-2', {email: email , data: otp});
+                res.render('forget-password-2', { email: email, data: otp });
                 console.log('Email sent: ' + info.response);
             }
         });
-
 
     } catch (error) {
         console.log(error);
     }
 };
 
-exports.forgetPass = (req,res) => {
+exports.forgetPass = (req, res) => {
     res.render('forget-password-2');
 }
 
-exports.forgetPassPost = async (req,res) => {
+exports.forgetPassPost = async (req, res) => {
     try {
-        const {otp , password , origionalOTP, email} = req.body;
-        if(origionalOTP === otp){
-            const haspPass = await bcrypt.hash(password,10)
-            await userModel.findOneAndUpdate({email}, { $set: {password : haspPass} });
+        const { otp, password, origionalOTP, email } = req.body;
+        if (origionalOTP === otp) {
+            const hashPass = await bcrypt.hash(password, 10);
+            await userModel.findOneAndUpdate({ email }, { $set: { password: hashPass } });
             res.redirect('/login');
-        }else{
-            res.status(404).json({message: 'provide correct otp'})
+        } else {
+            res.status(404).json({ message: 'Provide correct OTP' });
         }
     } catch (error) {
         console.log(error);

@@ -23,4 +23,6 @@ function isJobSeeker(req,res,next){
 }
 
 
+
+
 module.exports = {user: isUser , recruiter: isRecruiter , jobseeker: isJobSeeker};

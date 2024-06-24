@@ -9,8 +9,8 @@ router.get('/about',basicPageController.about)
 router.get('/candidate-details', authentication.recruiter,basicPageController.candidatedetail);
 router.get('/candidate-listing', authentication.recruiter,basicPageController.candidatelistning);
 router.get('/categories',basicPageController.categories);
-router.get('/company-details',basicPageController.companydetail);
-router.get('/company-listing',basicPageController.companylistting);
+// router.get('/company-details',basicPageController.companydetail);
+// router.get('/company-listing',basicPageController.companylistting);
 router.get('/company-register', authentication.recruiter,basicPageController.companyregister);
 router.get('/contact',basicPageController.contact);
 router.get('/employer-login', authentication.recruiter,basicPageController.employerlogin);

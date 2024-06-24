@@ -4,6 +4,8 @@ const UserInfo = require('../models/applyUserModel');
 const path = require('path');
 const nodemailer = require('nodemailer');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose'); // Add this line to import mongoose
+
 
 // Load environment variables from .env file
 dotenv.config();
@@ -70,8 +72,9 @@ exports.getJobDetails = async (req, res) => {
             return res.status(404).send('Job not found');
         }
 
-        console.log("Job found, sending response");
-        res.status(200).json(job);
+        console.log("Job data:", job);
+        res.render('job-details', { job: job });
+        
     } catch (error) {
         console.error("Error occurred in getJobDetails:", error);
         res.status(500).send('Server error');

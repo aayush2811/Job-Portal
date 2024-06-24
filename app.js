@@ -1,9 +1,8 @@
 const express = require('express');
-require('./db/connection');
+require('./db/connection'); // Ensure the database connection is established
 const session = require('express-session');
 const dotenv = require('dotenv');
 const MongoStore = require('connect-mongo');
-
 
 dotenv.config();
 
@@ -21,8 +20,7 @@ app.use(session({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
-    store: MongoStore.create({ mongoUrl: process.env.DATABASE_URL }),
-
+    store: MongoStore.create({ mongoUrl: process.env.DB_CONNECTION_STRING }),
 }));
 app.use('/uploads', express.static("uploads"));
 
@@ -35,5 +33,5 @@ app.set("view engine", "ejs");
 
 const port = process.env.PORT || 8000;
 app.listen(port, () => {
-    console.log(`http://localhost:${port}`);
+    console.log(`Server running at http://localhost:${port}`);
 });

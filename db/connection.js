@@ -8,7 +8,7 @@ mongoose.connect(process.env.DB_CONNECTION_STRING, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 }).then((res) => {
-    console.log('Database connected successfully');
+    console.log('DB_CONNECTION_STRING:', process.env.DB_CONNECTION_STRING);
 }).catch((error) => {
     console.log('Database connection error:', error);
 });

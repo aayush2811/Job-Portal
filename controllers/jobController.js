@@ -54,17 +54,29 @@ exports.addJob = (req, res) => {
 
 exports.getJobDetails = async (req, res) => {
     try {
+        console.log("Request received for job details");
+
         const jobId = req.params.id;
+
+        // Check if jobId is a valid ObjectId
+        if (!mongoose.Types.ObjectId.isValid(jobId)) {
+            return res.status(400).send('Invalid job ID');
+        }
+
+        console.log("Valid job ID, proceeding to find job");
         const job = await Job.findById(jobId);
+
         if (!job) {
             return res.status(404).send('Job not found');
         }
-        res.render('job-details', { job });
+
+        console.log("Job found, sending response");
+        res.status(200).json(job);
     } catch (error) {
-        console.error(error);
-        res.status(500).send('Internal Server Error');
+        console.error("Error occurred in getJobDetails:", error);
+        res.status(500).send('Server error');
     }
-}
+};
 
 exports.applyuser = async (req, res) => {
     try {

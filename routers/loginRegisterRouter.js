@@ -14,5 +14,14 @@ router.post('/send-email', loginRegisterController.sendEmail);
 router.get('/forget-password-2', authentication.user , loginRegisterController.forgetPass);
 router.post('/forget-pass', loginRegisterController.forgetPassPost);
 
+router.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            return res.redirect('/');
+        }
+        res.clearCookie('connect.sid');
+        res.redirect('/login');
+    });
+});
 
 module.exports = router;

@@ -23,7 +23,12 @@ let userSchema = new mongoose.Schema({
     },
     token:{
         type:String
+    },
+    isAdmin:{
+        type:Boolean,
+        default:false
     }
 })
+
 
 module.exports = mongoose.model('User', userSchema);
